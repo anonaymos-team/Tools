@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# ألوان ANSI
+# ANSI Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 CYAN='\033[0;36m'
 YELLOW='\033[1;33m'
-NC='\033[0m' # بدون لون
+NC='\033[0m' # No Color
 
-# واجهة دخول باسم ZINOU
+# Welcome Banner by ZINOU
 clear
 echo -e "${RED}███████╗██╗███╗   ██╗ ██████╗ ██╗   ██╗${NC}"
 echo -e "${RED}██╔════╝██║████╗  ██║██╔════╝ ██║   ██║${NC}"
@@ -19,183 +19,186 @@ echo -e "${YELLOW}         By ZINOU | Termux Edition${NC}"
 echo -e "${CYAN}-------------------------------------------${NC}"
 echo
 
-read -p "أدخل اسمك: " user
+read -p "Enter your name: " user
 clear
-echo -e "${GREEN}مرحباً بك $user، جاري تحميل الأدوات...${NC}"
+echo -e "${GREEN}Welcome $user, loading tools...${NC}"
 sleep 2
 
-# القائمة الرئيسية
+# Main Menu
 while true; do
   clear
-  echo -e "${CYAN}=========== قائمة الأدوات ===========${NC}"
-  echo -e "${YELLOW}[1]${NC} أدوات اختراق الشبكات"
-  echo -e "${YELLOW}[2]${NC} أدوات فحص واختبار الأمان"
-  echo -e "${YELLOW}[3]${NC} أدوات تحليل كلمات المرور"
-  echo -e "${YELLOW}[4]${NC} أدوات اختبار الاختراق"
-  echo -e "${YELLOW}[5]${NC} أدوات فحص الثغرات"
-  echo -e "${YELLOW}[6]${NC} أدوات DDoS"
-  echo -e "${YELLOW}[7]${NC} أدوات التصيد"
-  echo -e "${YELLOW}[8]${NC} أدوات البحث المتقدم"
-  echo -e "${YELLOW}[9]${NC} أدوات التحكم عن بُعد"
-  echo -e "${YELLOW}[10]${NC} أدوات تحليل الشبكات"
-  echo -e "${YELLOW}[11]${NC} خروج"
-  echo -e "${CYAN}======================================${NC}"
-  read -p "اختر فئة الأدوات: " opt
+  echo -e "${CYAN}=========== Tool Categories ===========${NC}"
+  echo -e "${YELLOW}[1]${NC} Network Hacking Tools"
+  echo -e "${YELLOW}[2]${NC} Security Testing Tools"
+  echo -e "${YELLOW}[3]${NC} Password Cracking Tools"
+  echo -e "${YELLOW}[4]${NC} Penetration Testing Tools"
+  echo -e "${YELLOW}[5]${NC} Vulnerability Scanners"
+  echo -e "${YELLOW}[6]${NC} DDoS Tools"
+  echo -e "${YELLOW}[7]${NC} Phishing Tools"
+  echo -e "${YELLOW}[8]${NC} Advanced Search Tools"
+  echo -e "${YELLOW}[9]${NC} Remote Access Tools"
+  echo -e "${YELLOW}[10]${NC} Network Analysis Tools"
+  echo -e "${YELLOW}[11]${NC} Exit"
+  echo -e "${CYAN}========================================${NC}"
+  read -p "Choose a category: " opt
 
   case $opt in
     1)
-      # أدوات اختراق الشبكات
       clear
-      echo -e "${CYAN}=========== أدوات اختراق الشبكات ===========${NC}"
+      echo -e "${CYAN}========= Network Hacking Tools =========${NC}"
       echo -e "${YELLOW}[1]${NC} Ettercap - MITM"
-      echo -e "${YELLOW}[2]${NC} Aircrack-ng - اختراق شبكات Wi-Fi"
-      echo -e "${YELLOW}[3]${NC} Wireshark - تحليل الشبكات"
-      echo -e "${YELLOW}[4]${NC} Bettercap - هجوم MITM"
-      echo -e "${YELLOW}[5]${NC} العودة للقائمة الرئيسية"
-      echo -e "${CYAN}==========================================${NC}"
-      read -p "اختر أداة: " net_hack_choice
+      echo -e "${YELLOW}[2]${NC} Aircrack-ng - Wi-Fi Cracking"
+      echo -e "${YELLOW}[3]${NC} Wireshark - Network Sniffer"
+      echo -e "${YELLOW}[4]${NC} Bettercap - MITM Attack"
+      echo -e "${YELLOW}[5]${NC} Back to Main Menu"
+      echo -e "${CYAN}=========================================${NC}"
+      read -p "Choose a tool: " net_hack_choice
       case $net_hack_choice in
         1)
           if command -v ettercap &> /dev/null; then
-            echo -e "${GREEN}تم العثور على Ettercap، بدء التشغيل...${NC}"
+            echo -e "${GREEN}Launching Ettercap...${NC}"
             ettercap -G
           else
-            echo -e "${RED}Ettercap غير مثبتة، الرجاء تثبيتها أولاً!${NC}"
+            echo -e "${RED}Ettercap not installed.${NC}"
           fi
           ;;
         2)
           if command -v aircrack-ng &> /dev/null; then
-            echo -e "${GREEN}تم العثور على Aircrack-ng، بدء التشغيل...${NC}"
+            echo -e "${GREEN}Launching Aircrack-ng...${NC}"
             aircrack-ng
           else
-            echo -e "${RED}Aircrack-ng غير مثبتة، الرجاء تثبيتها أولاً!${NC}"
+            echo -e "${RED}Aircrack-ng not installed.${NC}"
           fi
           ;;
         3)
           if command -v wireshark &> /dev/null; then
-            echo -e "${GREEN}تم العثور على Wireshark، بدء التشغيل...${NC}"
+            echo -e "${GREEN}Launching Wireshark...${NC}"
             wireshark
           else
-            echo -e "${RED}Wireshark غير مثبتة، الرجاء تثبيتها أولاً!${NC}"
+            echo -e "${RED}Wireshark not installed.${NC}"
           fi
           ;;
         4)
           if command -v bettercap &> /dev/null; then
-            echo -e "${GREEN}تم العثور على Bettercap، بدء التشغيل...${NC}"
+            echo -e "${GREEN}Launching Bettercap...${NC}"
             bettercap -G
           else
-            echo -e "${RED}Bettercap غير مثبتة، الرجاء تثبيتها أولاً!${NC}"
+            echo -e "${RED}Bettercap not installed.${NC}"
           fi
           ;;
         5)
           continue
           ;;
         *)
-          echo -e "${RED}رقم غير صحيح! جرب مجدداً.${NC}"
+          echo -e "${RED}Invalid choice!${NC}"
           sleep 1
           ;;
       esac
       ;;
     2)
-      # أدوات فحص واختبار الأمان
       clear
-      echo -e "${CYAN}=========== أدوات فحص واختبار الأمان ===========${NC}"
-      echo -e "${YELLOW}[1]${NC} Burp Suite - اختبار أمان تطبيقات الويب"
-      echo -e "${YELLOW}[2]${NC} OWASP ZAP - فحص أمان الويب"
-      echo -e "${YELLOW}[3]${NC} Nikto - فحص الثغرات للمواقع"
-      echo -e "${YELLOW}[4]${NC} Dirb - فحص الثغرات"
-      echo -e "${YELLOW}[5]${NC} العودة للقائمة الرئيسية"
-      echo -e "${CYAN}==========================================${NC}"
-      read -p "اختر أداة: " sec_testing_choice
+      echo -e "${CYAN}===== Security Testing Tools =====${NC}"
+      echo -e "${YELLOW}[1]${NC} Burp Suite"
+      echo -e "${YELLOW}[2]${NC} OWASP ZAP"
+      echo -e "${YELLOW}[3]${NC} Nikto"
+      echo -e "${YELLOW}[4]${NC} Dirb"
+      echo -e "${YELLOW}[5]${NC} Back to Main Menu"
+      read -p "Choose a tool: " sec_testing_choice
       case $sec_testing_choice in
         1)
           if command -v burpsuite &> /dev/null; then
-            echo -e "${GREEN}تم العثور على Burp Suite، بدء التشغيل...${NC}"
+            echo -e "${GREEN}Launching Burp Suite...${NC}"
             burpsuite
           else
-            echo -e "${RED}Burp Suite غير مثبتة، الرجاء تثبيتها أولاً!${NC}"
+            echo -e "${RED}Burp Suite not installed.${NC}"
           fi
           ;;
         2)
           if command -v zap &> /dev/null; then
-            echo -e "${GREEN}تم العثور على OWASP ZAP، بدء التشغيل...${NC}"
+            echo -e "${GREEN}Launching OWASP ZAP...${NC}"
             zap
           else
-            echo -e "${RED}OWASP ZAP غير مثبتة، الرجاء تثبيتها أولاً!${NC}"
+            echo -e "${RED}OWASP ZAP not installed.${NC}"
           fi
           ;;
         3)
           if command -v nikto &> /dev/null; then
-            echo -e "${GREEN}تم العثور على Nikto، بدء التشغيل...${NC}"
+            echo -e "${GREEN}Launching Nikto...${NC}"
             nikto
           else
-            echo -e "${RED}Nikto غير مثبتة، الرجاء تثبيتها أولاً!${NC}"
+            echo -e "${RED}Nikto not installed.${NC}"
           fi
           ;;
         4)
           if command -v dirb &> /dev/null; then
-            echo -e "${GREEN}تم العثور على Dirb، بدء التشغيل...${NC}"
+            echo -e "${GREEN}Launching Dirb...${NC}"
             dirb
           else
-            echo -e "${RED}Dirb غير مثبتة، الرجاء تثبيتها أولاً!${NC}"
+            echo -e "${RED}Dirb not installed.${NC}"
           fi
           ;;
         5)
           continue
           ;;
         *)
-          echo -e "${RED}رقم غير صحيح! جرب مجدداً.${NC}"
+          echo -e "${RED}Invalid choice!${NC}"
           sleep 1
           ;;
       esac
       ;;
     3)
-      # أدوات تحليل كلمات المرور
       clear
-      echo -e "${CYAN}=========== أدوات تحليل كلمات المرور ===========${NC}"
-      echo -e "${YELLOW}[1]${NC} John the Ripper - كسر كلمات المرور"
-      echo -e "${YELLOW}[2]${NC} Hashcat - تحليل وتكسير كلمات المرور"
-      echo -e "${YELLOW}[3]${NC} Medusa - كسر كلمات المرور عبر الشبكة"
-      echo -e "${YELLOW}[4]${NC} العودة للقائمة الرئيسية"
-      echo -e "${CYAN}==========================================${NC}"
-      read -p "اختر أداة: " password_choice
+      echo -e "${CYAN}===== Password Cracking Tools =====${NC}"
+      echo -e "${YELLOW}[1]${NC} John the Ripper"
+      echo -e "${YELLOW}[2]${NC} Hashcat"
+      echo -e "${YELLOW}[3]${NC} Medusa"
+      echo -e "${YELLOW}[4]${NC} Back to Main Menu"
+      read -p "Choose a tool: " password_choice
       case $password_choice in
         1)
           if command -v john &> /dev/null; then
-            echo -e "${GREEN}تم العثور على John the Ripper، بدء التشغيل...${NC}"
+            echo -e "${GREEN}Launching John the Ripper...${NC}"
             john
           else
-            echo -e "${RED}John the Ripper غير مثبتة، الرجاء تثبيتها أولاً!${NC}"
+            echo -e "${RED}John the Ripper not installed.${NC}"
           fi
           ;;
         2)
           if command -v hashcat &> /dev/null; then
-            echo -e "${GREEN}تم العثور على Hashcat، بدء التشغيل...${NC}"
+            echo -e "${GREEN}Launching Hashcat...${NC}"
             hashcat
           else
-            echo -e "${RED}Hashcat غير مثبتة، الرجاء تثبيتها أولاً!${NC}"
+            echo -e "${RED}Hashcat not installed.${NC}"
           fi
           ;;
         3)
           if command -v medusa &> /dev/null; then
-            echo -e "${GREEN}تم العثور على Medusa، بدء التشغيل...${NC}"
+            echo -e "${GREEN}Launching Medusa...${NC}"
             medusa
           else
-            echo -e "${RED}Medusa غير مثبتة، الرجاء تثبيتها أولاً!${NC}"
+            echo -e "${RED}Medusa not installed.${NC}"
           fi
           ;;
         4)
           continue
           ;;
         *)
-          echo -e "${RED}رقم غير صحيح! جرب مجدداً.${NC}"
+          echo -e "${RED}Invalid choice!${NC}"
           sleep 1
           ;;
       esac
       ;;
     4)
-      # إغلاق السكربت عند اختيار خروج
-      exit 0
+      clear
+      echo -e "${CYAN}Coming soon...${NC}"
+      ;;
+    11)
+      echo -e "${YELLOW}Goodbye, $user!${NC}"
+      break
       ;;
     *)
-      echo -e "${RED}اختيار غير
+      echo -e "${RED}Invalid input. Try again.${NC}"
+      sleep 1
+      ;;
+  esac
+done
