@@ -188,4 +188,14 @@ while true; do
           continue
           ;;
         *)
-          echo -e "${RED}رق
+          echo -e "${RED}رقم غير صحيح! جرب مجدداً.${NC}"
+          sleep 1
+          ;;
+      esac
+      ;;
+    4)
+      # إغلاق السكربت عند اختيار خروج
+      exit 0
+      ;;
+    *)
+      echo -e "${RED}اختيار غير
